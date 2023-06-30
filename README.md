@@ -26,5 +26,5 @@
 ### Step 3:Run the Ui
 1. Open a terminal or command prompt.
 2. Install the serve package globally by running the following command: npm install -g serve
-3. Navigate inside the Ui directory and start the server and serve the UI files by running the following command: serve -s
+3. Navigate inside the dist directory and start the server and serve the UI files by running the following command: serve -s
 4. After running the command, you should see a message indicating that the server is running.
