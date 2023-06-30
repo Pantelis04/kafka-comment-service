@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/commentdatabaseTest
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+
+  logging:
+    level:
+      root: INFO
+      com.example: DEBUG

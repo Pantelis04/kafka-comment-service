@@ -1,0 +1,34 @@
+server:
+  port: ${random.int[10400,10499]}
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/commentdatabase
+    username: postgres
+    password: mysecretpassword
+    driver-class-name: org.postgresql.Driver
+  profiles:
+    active:
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  application:
+    name: persistence-layer
+
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: my-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      auto-offset-reset: earliest
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  logging:
+    level:
+      root: INFO
+      com.example: INFO
