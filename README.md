@@ -14,13 +14,9 @@
 
 ### Step 2: Run Kafka and ZooKeeper Locally
 
-1. Open a terminal or command prompt.
-2. Pull the ZooKeeper Docker image and run a container:
-3. docker pull confluentinc/cp-zookeeper
-4. docker pull confluentinc/cp-kafka
-5. docker run -d --name zookeeper -p 2181:2181 -e ZOOKEEPER_CLIENT_PORT=2181 confluentinc/cp-zookeeper
-6. docker run -d --name kafka -p 9092:9092 --link zookeeper:zookeeper -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092 confluentinc/cp-kafka
-7. docker exec -it kafka kafka-topics --create --topic __consumer_offsets --bootstrap-server localhost:9092 --partitions 50 --replication-factor 1 --config cleanup.policy=compact --config compression.type=producer --config segment.bytes=104
+1. Open a terminal or command prompt
+2. Navigate to the comment-service folder where the docker-compose.yml file is.
+3. Run the command docker-compose up
 
 
 ### Step 3:Run the Ui
